@@ -13,8 +13,8 @@ import { JWT } from 'next-auth/jwt';
 export const authOptions: NextAuthOptions = {
     providers: [
     GoogleProvider({
-        clientId: '',
-        clentSecret: ''
+        clientId: process.env.GOOGLE_CLIENT_ID!,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     })
 ],
 jwt: {
@@ -30,11 +30,19 @@ theme: {
     logo: '/logo.png'
 },
 callbacks: {
-    async sessionStorage({ session }) {
-
+    async session ({ session }) {
+        return session;
     },
-    async signIn({ user }) {
-        
+    async signIn({ user }: {user: AdapterUser | User}) {
+
+        try{
+            return true;
+        } catch (error: any){
+            console.log(error);
+            return false;
+
+        }
+
     }
-},
+}
 }
