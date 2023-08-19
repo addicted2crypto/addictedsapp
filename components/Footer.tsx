@@ -1,7 +1,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { footerLinks } from '@/constance'
+import { footerLinks } from '@/constant'
 
 type ColumnProps = {
   title: string;
@@ -23,10 +23,10 @@ const footer = () => (
     <section className='flexStart footer'>
       <div className='flex flex-col gap-12 w-full'>
         <div className='flex items-start flex-col'>
-          <Image src="/rug.png"
-          width={115}
-          height={38}
-          alt="Charts" />
+          
+          
+          
+          
           <p className='text-start text-sm front-normal mt-5 max-w-xs'>Addicted's curated web3 app. A location for all information in a community way.
           </p>
         </div>

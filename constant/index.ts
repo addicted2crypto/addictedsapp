@@ -28,10 +28,10 @@ export const NavLinks = [
       links: [
         'Go Pro!',
         'Explore development work',
-        'Development blog',
+        'Newest framework content',
         'Code podcast',
         'Open-source projects',
-        'Refer a Friend',
+        'Solidity courses',
         'Code of conduct',
       ],
     },
@@ -41,16 +41,20 @@ export const NavLinks = [
         'Post a job opening',
         'Post a freelance project',
         'Search for developers',
+        'Templates for your project'
       ],
     },
     {
       title: 'Brands',
       links: [
         'Advertise with us',
+        'Contact William',
+        'Linkedin',
+        'Github'
       ],
     },
     {
-      title: 'Company',
+      title: 'Addicted\s World',
       links: [
         'About',
         'Careers',
@@ -59,7 +63,7 @@ export const NavLinks = [
         'Testimonials',
         'API',
         'Terms of service',
-        'Privacy policy',
+        'Vetted SDK\'s',
         'Cookie policy',
       ],
     },
@@ -77,6 +81,7 @@ export const NavLinks = [
       title: 'Development assets',
       links: [
         'Code Marketplace',
+        'Example\'s of audited code',
         'GitHub Marketplace',
         'NPM Registry',
         'Packagephobia',
@@ -89,8 +94,8 @@ export const NavLinks = [
         'Development Hiring',
         'Development Portfolio',
         'Development Education',
-        'Creative Process',
-        'Development Industry Trends',
+        'Start today -> Learn the basics',
+        'Trending ',
       ],
     },
 ];
