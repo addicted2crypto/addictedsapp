@@ -1,4 +1,4 @@
-import { getServerSession } from 'next-auth';
+import { getServerSession } from 'next-auth/next';
 import { NextAuthOptions, User } from 'next-auth';
 import { AdapterUser } from 'next-auth/adapters';
 import GoogleProvider from 'next-auth/providers/google';
@@ -28,13 +28,13 @@ jwt: {
         return encodedToken;
     },
     decode: async ({ secret, token }) => {
-        const decodedToken = jsonwebtoken.verify(token!, secret) as JWT;
+        const decodedToken = jsonwebtoken.verify(token!, secret);
         return decodedToken as JWT;
     },
 },
 theme: {
     colorScheme: 'dark',
-    logo: 'Signin',
+    logo: '/logo.svg',
 },
 callbacks: {
     async session ({ session }) {
@@ -52,7 +52,7 @@ callbacks: {
             }
             return newSession;
         } catch (error) {
-            console.log("This broke my brain but we cant get that user data you fail", error.message);
+            console.log("This broke my brain but we cant get that user data you fail");
             return session;
 
         }

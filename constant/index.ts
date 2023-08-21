@@ -3,7 +3,8 @@ export const NavLinks = [
     { href: '/', key: 'Projects', text: 'New Projects' },
     { href: '/', key: 'Learn Development', text: 'Dev tools' },
     { href: '/', key: 'Career Advancement', text: 'Career Advancement' },
-    { href: '/', key: 'Hire Developers', text: 'Hire Developers' }
+    { href: '/', key: 'Hire Developers', text: 'Hire Developers' },
+    { href: '/', key: 'Wallet Connect', text: 'Wallet Connect'}
   ];
   
   export const categoryFilters = [
