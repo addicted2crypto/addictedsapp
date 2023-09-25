@@ -1,48 +1,49 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { NavLinks } from '@/constance'
-import AuthProviders from './AuthProviders'
 
-const navbar = () => {
-  const session = {};//null with let us have auth providers link
+import Image from "next/image";
+import Link from "next/link";
 
+import { NavLinks } from "@/constant";
+import { getCurrentUser } from "@/lib/session";
+
+import AuthProviders from "./AuthProviders";
+import Button from "./Button";
+import ProfileMenu from "./ProfileMenu";
+
+const Navbar = async () => {
+  const session = await getCurrentUser();
 
   return (
-    <nav className='flex-between navbar'>
+    <nav className='flexBetween navbar'>
       <div className='flex-1 flexStart gap-10'>
-        <Link href="/">
-          <Image 
-          src ="/rug.png" 
-          width={115}
-          height={43}
-          alt="Crypto Markets"
+        <Link href='/'>
+          <Image
+            src='/logo1.png'
+            width={222}
+            height={43}
+            alt='logo1'
           />
-          </Link>
-          <ul className='xl:flex hidden text-small gap-7'>
-            {NavLinks.map((link) => (
-              <Link href={link.href} key={link.key}>
-                {link.text}
-              </Link>
-            ))}
-          </ul>
-        
+        </Link>
+        <ul className='flex text-small gap-7'>
+          {NavLinks.map((link) => (
+            <Link href={link.href} key={link.text}>
+              {link.text}
+            </Link>
+          ))}
+        </ul>
       </div>
-      <div className='flex-end gap-12'>
-        {session ? (
+
+      <div className='flexCenter gap-4'>
+        {session?.user ? (
           <>
-          UserWallet
-          
-          <Link href="/create-project">
-          <p>Share New Software</p>
-          <p>Wallet Connect</p>
-          </Link>
-          
+          UserPhoto
+            <ProfileMenu session={session} />
+
+            <Link href="/create-project">
+              
+              <Button title='Share work' />
+            </Link>
           </>
-         
-          
-          
-        )  : (
+        ) : (
           <AuthProviders />
         )}
       </div>
@@ -50,4 +51,48 @@ const navbar = () => {
   );
 };
 
-export default navbar
+export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
