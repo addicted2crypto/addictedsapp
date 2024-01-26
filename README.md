@@ -1,3 +1,8 @@
+This is the start of me building apps I want to use. It is all starting to click more and more.
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
